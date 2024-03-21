@@ -22,7 +22,7 @@ const Login = () => {
         // 在此處處理登入邏輯
         console.log(`Username: ${username}, Password: ${password}`);
         // 登入成功後跳轉到首頁
-        navigate('/');
+        navigate('/ItemsList');
     };
 
     const styles = {
