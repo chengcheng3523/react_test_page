@@ -6,7 +6,9 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import ProductCollectionPage from './pages/ProductCollectionPage';
 import ProductPage from './pages/ProductPage';
-import PersonalPage from './pages/PersonalPage';
+
+import CompanyPage from './pages/CompanyPage';
+import Address from './pages/Address';
 import MaterialsPage from './pages/MaterialsPage';
 import ItemsList from './pages/ItemsList';
 import Login from './pages/Login';
@@ -21,8 +23,9 @@ const App = () => {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/mall/:categoryName" element={<ProductCollectionPage />} />
           <Route path="/:ProductName" element={<ProductPage />} />
-          <Route path="/Personal" element={< PersonalPage />} />
-          <Route path="/Materials" element={< MaterialsPage />} />
+          <Route path="/CompanyPage" element={<CompanyPage />} />
+          <Route path="/Address" element={< Address />} />
+          <Route path="/MaterialsPage" element={< MaterialsPage />} />
           <Route path="/Login" element={< Login />} />
           <Route path="/ItemsList" element={< ItemsList />} />
           

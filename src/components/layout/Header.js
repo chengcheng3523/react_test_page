@@ -4,7 +4,7 @@ import {
   AppstoreOutlined,
   SettingOutlined,
   UserOutlined,
-  UserAddOutlined
+  ProfileOutlined
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
@@ -24,8 +24,8 @@ const Header = () => {
         <Link to="/">Home</Link>
       </Item>
 
-      <Item key="register" icon={<UserAddOutlined />} className="float-right">
-        <Link to="/register">Register</Link>
+      <Item key="CompanyPage" icon={<ProfileOutlined />} className="float-right">
+        <Link to="/CompanyPage">Company</Link>
       </Item>
 
       <Item key="login" icon={<UserOutlined />} className="float-right">

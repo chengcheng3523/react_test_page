@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import ClearFix from "../components/common/ClearFix";
 import DefaultLayout from "../components/layout/DefaultLayout";
-import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom'; // 使用 useNavigate 替代 useHistory
 
 
 
 const HomePage = () => {
 
     const [inputValue, setInputValue] = useState('');
+    const navigate = useNavigate(); // 使用 useNavigate 替代 useHistory
 
+    const handleButtonClick = () => {
+        navigate("/Personal"); // 替换为您要跳转的路径
+    };
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
@@ -28,7 +32,7 @@ const HomePage = () => {
 
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="輸入內容" value={inputValue} onChange={handleInputChange} />
-                <button type="submit">提交</button>
+                <button type="submit" onClick={handleButtonClick}>提交</button>
             </form>
             
             <ClearFix height="500px"/>
