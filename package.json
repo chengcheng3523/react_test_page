@@ -1,0 +1,33 @@
+{
+  "name": "testapi",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons": "^5.3.5",
+    "antd": "^5.15.3",
+    "bootstrap": "^5.3.3",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^6.1.8",
+    "web-vitals": "^3.5.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
