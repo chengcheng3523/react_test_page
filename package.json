@@ -1,6 +1,7 @@
 {
-  "homepage": "http://chengcheng3523.github.io/react_test_page ",
+  
   "name": "testapi",
+  "homepage": "http://chengcheng3523.github.io/react_test_page ",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

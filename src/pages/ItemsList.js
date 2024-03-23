@@ -14,10 +14,10 @@ const ItemsList = () => {
         console.log(date, dateString);
     };
 
-    const gridStyle = {
-        width: '25%',
-        textAlign: 'center',
-      };
+    // const gridStyle = {
+    //     width: '25%',
+    //     textAlign: 'center',
+    //   };
 
 
     return (
