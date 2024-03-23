@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import DefaultLayout from "../components/layout/DefaultLayout";
 import ClearFix from "../components/common/ClearFix";
-import { DatePicker, Space, InputNumber, Select } from 'antd';
+import { DatePicker, Space, Select } from 'antd';
 import { Button, Flex, Input,Card } from 'antd';
 
 const CompanyPage = () => {
     const [size] = useState('large'); // default is 'middle'
 
-    const handleChange = (value) => {
-        console.log(`selected ${value}`);
-    };
+    // const handleChange = (value) => {
+    //     console.log(`selected ${value}`);
+    // };
     const onChangeDatePicker = (date, dateString) => {
         console.log(date, dateString);
     };
 
-    const gridStyle = {
-        width: '25%',
-        textAlign: 'center',
-      };
+    // const gridStyle = {
+    //     width: '25%',
+    //     textAlign: 'center',
+    //   };
 
 
     return (

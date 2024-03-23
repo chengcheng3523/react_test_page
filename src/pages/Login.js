@@ -6,7 +6,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [usernameIsFocused, setUsernameIsFocused] = useState(false); // 為 username 創建聚焦狀態
     const [passwordIsFocused, setPasswordIsFocused] = useState(false); // 為 password 創建聚焦狀態
-    // const [isFocused, setIsFocused] = useState(false);
+    const [isFocused] = useState(false);
 
     const navigate = useNavigate(); // 定義 navigate
     const handleUsernameChange = (event) => {

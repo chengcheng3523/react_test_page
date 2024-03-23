@@ -64,11 +64,11 @@ const ItemsList = () => {
                 </Flex>        
             </Flex>
             </Card>
-            <Card type="inner" title="其他資材與代碼對照表1" extra={<a href="#">More</a>}>
+            <Card type="inner" title="其他資材與代碼對照表1" extra={<button>More</button>}>
             <Input placeholder="資材代碼" variant="borderless" />
             <Input placeholder="資材名稱" variant="borderless" />
             </Card>
-            <Card type="inner" title="其他資材與代碼對照表2" extra={<a href="#">More</a>}>
+            <Card type="inner" title="其他資材與代碼對照表2" extra={<button>More</button>}>
             <Input placeholder="資材代碼" variant="borderless" />
             <Input placeholder="資材名稱" variant="borderless" />
             </Card>
