@@ -13,11 +13,12 @@ const ItemsList = () => {
     const onChangeDatePicker = (date, dateString) => {
         console.log(date, dateString);
     };
+    const [cards, setCards] = useState([{}]); // 初始状态为一个空的卡片
 
-    // const gridStyle = {
-    //     width: '25%',
-    //     textAlign: 'center',
-    //   };
+  function handleClick() {
+    setCards([...cards, {}]); // 添加一个新的空卡片
+  }
+    
 
 
     return (
@@ -60,19 +61,38 @@ const ItemsList = () => {
             </Flex>
             <Flex gap="small" align="flex-start" vertical>
                 <Flex gap="small" wrap="wrap">          
-                    <Button size={size}>储存</Button>          
+                            
                 </Flex>        
             </Flex>
+
             </Card>
-            <Card type="inner" title="其他資材與代碼對照表1" extra={<button>More</button>}>
+            <Card type="inner" title="其他資材與代碼對照表1"extra={<button onClick={handleClick}>More</button>}>
             <Input placeholder="資材代碼" variant="borderless" />
             <Input placeholder="資材名稱" variant="borderless" />
             </Card>
-            <Card type="inner" title="其他資材與代碼對照表2" extra={<button>More</button>}>
-            <Input placeholder="資材代碼" variant="borderless" />
-            <Input placeholder="資材名稱" variant="borderless" />
-            </Card>
-            <ClearFix height="500px"/>
+
+
+        <div>
+            <Space direction="vertical" size={16}>
+                <Card
+                title="Default size card"
+                extra={<a href="#" onClick={handleClick}>More</a>}
+                style={{ width: 300 }}>
+                </Card>
+            {cards.map((card, index) => (
+                <Card
+                key={index}
+                size="small"
+                title="其他資材與代碼對照表"
+                extra={<a href="#" onClick={handleClick}>More</a>}
+                style={{ width: 300 }}>
+                <Input placeholder="資材代碼" variant="borderless" />
+                <Input placeholder="資材名稱" variant="borderless" />
+                </Card>))}        
+            </Space>         
+        </div>
+        <Button size={size}>储存</Button> 
+        <ClearFix height="500px"/>
         </DefaultLayout>
     );
 };
