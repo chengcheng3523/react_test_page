@@ -23,8 +23,8 @@ const DryPage = () => {
     return (
      
 
-        <DefaultLayout fixedHeader>    
-            <Loginlayout >       
+          
+            <Loginlayout fixedHeader>       
             <ClearFix height="90px"/>      
             <div>
             <h1>
@@ -81,7 +81,7 @@ const DryPage = () => {
                 </div>
         <ClearFix height="500px"/>
         </Loginlayout>
-        </DefaultLayout>
+        
 
     );
 

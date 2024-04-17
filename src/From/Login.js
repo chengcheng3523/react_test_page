@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ClearFix from "../components/common/ClearFix";
+import DefaultLayout from "../components/layout/DefaultLayout";
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -28,7 +30,7 @@ const Login = () => {
     const styles = {
         body: {
             fontFamily: 'Roboto',
-            backgroundColor: '#e76f51',
+            backgroundColor: '#FFFFFF',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -79,7 +81,10 @@ const Login = () => {
     };
 
     return (
+        <DefaultLayout fixedHeader> 
+        <ClearFix height="90px"/>
         <div style={styles.body}>
+                  
             
             <form onSubmit={handleSubmit} style={styles.login}>
             <h1>Login 登入</h1>
@@ -108,6 +113,8 @@ const Login = () => {
                 />
             </form>
         </div>
+        </DefaultLayout>
+
     );
 };
 
