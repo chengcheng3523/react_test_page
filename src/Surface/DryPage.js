@@ -3,7 +3,7 @@ import DefaultLayout from "../components/layout/DefaultLayout";
 import ClearFix from "../components/common/ClearFix";
 import { DatePicker, Space, InputNumber, Select } from 'antd';
 import { Button, Flex, Input,Card } from 'antd';
-
+import Loginlayout from "../components/layout/Loginlayout";
 
 const DryPage = () => {
     const [size] = useState('large'); // default is 'middle'
@@ -23,7 +23,8 @@ const DryPage = () => {
     return (
      
 
-        <DefaultLayout fixedHeader>           
+        <DefaultLayout fixedHeader>    
+            <Loginlayout >       
             <ClearFix height="90px"/>      
             <div>
             <h1>
@@ -79,6 +80,7 @@ const DryPage = () => {
                      <Button size={size} style={{ width: '50%', margin: '20px auto' }}>To Save</Button>
                 </div>
         <ClearFix height="500px"/>
+        </Loginlayout>
         </DefaultLayout>
 
     );

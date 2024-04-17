@@ -11,7 +11,7 @@ const HomePage = () => {
     const navigate = useNavigate(); // 使用 useNavigate 替代 useHistory
 
     const handleButtonClick = () => {
-        navigate("/Personal"); // 替换为您要跳转的路径
+        navigate("/CompanyPage"); // 替换为您要跳转的路径
     };
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
@@ -27,7 +27,7 @@ const HomePage = () => {
             <ClearFix height="100px"/>  
 
             <div>
-                <h1>Home Page</h1>                                                                               
+                <h1>Home Page( 顯示及查詢作物產銷履歷紀錄)</h1>                                                                               
             </div>
 
             <form onSubmit={handleSubmit}>

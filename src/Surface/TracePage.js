@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
+import Loginlayout from "../components/layout/Loginlayout";
 import {  Button,  Cascader,  DatePicker,  Form,  Input,  InputNumber,  Radio,  Select,  Switch,  TreeSelect,} from 'antd';
 
 
 const TracePage   = () => {
-        <div>
-            <h1>
-            表15.場地設施之保養、維修及清潔管理紀錄
-            </h1>
-        </div>
+      
     
   const [componentSize, setComponentSize] = useState('default');
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
   return (
+    <Loginlayout fixedHeader>
+        <div>
+            <h1>
+            表15.場地設施之保養、維修及清潔管理紀錄
+            </h1>
+        </div>
     <Form
       labelCol={{
         span: 4,
@@ -91,6 +94,7 @@ const TracePage   = () => {
         <Button>Button</Button>
       </Form.Item>
     </Form>
+    </Loginlayout>
   );
 }
   export default TracePage  ;

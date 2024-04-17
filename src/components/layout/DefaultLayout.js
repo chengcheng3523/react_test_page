@@ -16,6 +16,7 @@ const DefaultLayout = ({ fixedHeader, children }) => {
         <div>
             <PageHeader fixed={fixedHeader}>
                 <Header />
+                
             </PageHeader>
             {children}
             <Footer />

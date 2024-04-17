@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import DefaultLayout from "../components/layout/DefaultLayout";
+import Loginlayout from "../components/layout/Loginlayout";
 import ClearFix from "../components/common/ClearFix";
-import { Button, Flex, Input,Card } from 'antd';
+import { Button, Flex, Input, Card, Cascader, DatePicker, Form, InputNumber, Radio, Select, Switch, TreeSelect, Space } from 'antd';
 
 
 const MapPage  = () => {
@@ -16,7 +16,7 @@ const MapPage  = () => {
     return (
      
         
-        <DefaultLayout fixedHeader>           
+      <Loginlayout fixedHeader>       
             <ClearFix height="90px"/>      
             <div>
             <h1>
@@ -38,7 +38,7 @@ const MapPage  = () => {
                      <Button size={size} style={{ width: '50%', margin: '20px auto' }}>To Save</Button>
                 </div>
             <ClearFix height="500px"/>
-        </DefaultLayout>
+        </Loginlayout>
 
 
    

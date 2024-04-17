@@ -40,7 +40,7 @@ import FeedbackPage from './Surface/FeedbackPage'; // 表22
 import RecyclingPage from './Surface/RecyclingPage'; // 表23
 import PurchasePage24 from './Surface/PurchasePage24'; // 表24
 import AnalysisPage from './Surface/AnalysisPage'; // 表25
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DefaultLayout from "../components/layout/DefaultLayout";
+import Loginlayout from "../components/layout/Loginlayout";
 import ClearFix from "../components/common/ClearFix";
 import { Button, Flex, Input,Card } from 'antd';
 
@@ -16,7 +16,7 @@ const PackPage = () => {
     return (
      
         
-        <DefaultLayout fixedHeader>           
+        <Loginlayout fixedHeader>           
             <ClearFix height="90px"/>      
             <div>
             <h1>
@@ -38,7 +38,7 @@ const PackPage = () => {
                      <Button size={size} style={{ width: '50%', margin: '20px auto' }}>To Save</Button>
                 </div>
             <ClearFix height="500px"/>
-        </DefaultLayout>
+        </Loginlayout>
 
 
    
