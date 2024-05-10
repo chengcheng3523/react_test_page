@@ -52,7 +52,7 @@ const FeedPage=() => {
           extra={<Button onClick={handleClick}>More</Button>}>
 
           <Form
-            labelCol={{ span: 4 }}
+            labelCol={{ span: 10 }}
             wrapperCol={{ span: 14 }}
             layout="horizontal"
             initialValues={{ size: componentSize }}
@@ -79,7 +79,7 @@ const FeedPage=() => {
                   <Radio value={7}>冷藏車</Radio>
                   <Radio value={8}>貨車</Radio>                    
                   <Radio value={9}>其他              
-                      <Input style={{ width: 100, marginLeft: 10 }} />
+                      <Input placeholder="請填寫其他項目:" style={{ width: 200, marginLeft: 10 }} />
                   </Radio>
                 </Space>
               </Radio.Group>
@@ -95,7 +95,7 @@ const FeedPage=() => {
                   <Radio value={14}>
                   其他
                     
-                      <Input style={{ width: 100, marginLeft: 10 }} />
+                      <Input placeholder="請填寫其他作業內容:" style={{ width: 200, marginLeft: 10 }} />
                     
                   </Radio>
                 </Space>

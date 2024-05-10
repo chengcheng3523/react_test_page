@@ -79,7 +79,7 @@ const FacilityPage = () => {
                   <Radio value={4}>
                   其他
                     {value === 4 ? (
-                      <Input style={{ width: 100, marginLeft: 10 }} />
+                      <Input placeholder="請填寫其他操作方式:" style={{ width: 200, marginLeft: 10 }} />
                     ) : null}
                   </Radio>
                 </Space>

@@ -52,7 +52,7 @@ const InspectPage=() => {
           extra={<Button onClick={handleClick}>More</Button>}>
            
           <Form
-            labelCol={{ span: 4 }}
+            labelCol={{ span: 10 }}
             wrapperCol={{ span: 14 }}
             layout="horizontal"
             initialValues={{ size: componentSize }}
@@ -76,7 +76,7 @@ const InspectPage=() => {
                   <Radio value={1}>零售(地點)：</Radio>
                   <Radio value={2}>盤商：</Radio>                                                      
                   <Radio value={3}>其他              
-                      <Input style={{ width: 100, marginLeft: 10 }} />
+                      <Input placeholder="請填寫其他銷售對象:" style={{ width: 200, marginLeft: 10 }} />
                   </Radio>                
                   <Form.Item label="批次編號：">
                     <Input />
@@ -96,7 +96,7 @@ const InspectPage=() => {
                 <Space direction="vertical">
                   <Radio value={4}>非驗證產品</Radio>
                   <Radio value={5}>驗證產品，驗證機構：
-                  <Input style={{ width: 100, marginLeft: 10 }} />
+                  <Input placeholder="請填寫驗證機構:" style={{ width: 200, marginLeft: 10 }} />
                   </Radio>
                 </Space>
               </Radio.Group>

@@ -50,7 +50,7 @@ const handleVerificationStatusChange = (value) => {
           extra={<Button onClick={handleClick}>More</Button>}>
 
           <Form
-            labelCol={{ span: 4 }}
+            labelCol={{ span: 10 }}
             wrapperCol={{ span: 14 }}
             layout="horizontal"
             initialValues={{ size: componentSize }}
@@ -75,7 +75,7 @@ const handleVerificationStatusChange = (value) => {
                   <Radio value={5}>集貨場</Radio>
                   <Radio value={6}>包裝場</Radio>                                   
                   <Radio value={7}>其他              
-                      <Input style={{ width: 100, marginLeft: 10 }} />
+                      <Input placeholder="請填寫其他項目:" style={{ width: 200, marginLeft: 10 }} />
                   </Radio>
                 </Space>
               </Radio.Group>
@@ -87,7 +87,7 @@ const handleVerificationStatusChange = (value) => {
                   <Radio value={8}>清潔</Radio>
                   <Radio value={9}>保養</Radio>
                   <Radio value={10}>維修</Radio>
-                  <Radio value={11}>其他<Input style={{ width: 100, marginLeft: 10 }} />
+                  <Radio value={11}>其他<Input placeholder="請填寫其他作業內容:" style={{ width: 200, marginLeft: 10 }} />
                   </Radio>
                 </Space>
               </Radio.Group>

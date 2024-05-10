@@ -51,7 +51,7 @@ const SeedPage = () => {
         >
           <Form
            
-            labelCol={{ span: 4 }}
+            labelCol={{ span: 10}}
             wrapperCol={{ span: 14 }}
             layout="horizontal"
             initialValues={{ size: componentSize }}
@@ -75,7 +75,7 @@ const SeedPage = () => {
                   <Radio value={2}>
                     購買來源
                     {value === 2 ? (
-                      <Input style={{ width: 100, marginLeft: 10 }} />
+                      <Input placeholder="請填寫其他購買來源:" style={{ width: 200, marginLeft: 10 }} />
                     ) : null}
                   </Radio>
                 </Space>
