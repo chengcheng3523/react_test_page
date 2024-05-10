@@ -14,7 +14,7 @@ import ItemsList from './From/ItemsList';
 import Login from './From/Login'; //Login
 
 import InfoPage from './Surface/InfoPage'; // 表1-1
-import PlanPage from './Surface/PlanPage'; // 表1-2
+import PlanPage from './Surface/PlanPage'; // 表1-2 未完成
 import SeedPage from './Surface/SeedPage'; // 表2
 import WorkPage from './Surface/WorkPage'; // 表3
 import SolutionPage from './Surface/SolutionPage'; // 表4
@@ -34,12 +34,6 @@ import RecallPage from './Surface/RecallPage'; // 表17
 import PurchasePage from './Surface/PurchasePage'; // 表18
 import InspectPage from './Surface/InspectPage'; // 表19
 
-import HealthPage20 from './Surface/HealthPage20'; // 表20
-import ContractPage from './Surface/ContractPage'; // 表21
-import FeedbackPage from './Surface/FeedbackPage'; // 表22
-import RecyclingPage from './Surface/RecyclingPage'; // 表23
-import PurchasePage24 from './Surface/PurchasePage24'; // 表24
-import AnalysisPage from './Surface/AnalysisPage'; // 表25
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
 
@@ -64,7 +58,7 @@ const App = () => {
           <Route path="/ItemsList" element={< ItemsList />} />
 
           
-          <Route path="/InfoPage" element={< InfoPage />} />
+          <Route path="/InfoPage" element={< InfoPage />} />  
           <Route path="/PlanPage" element={< PlanPage />} />
           <Route path="/SeedPage" element={< SeedPage />} />
           <Route path="/WorkPage" element={< WorkPage />} />
@@ -84,13 +78,6 @@ const App = () => {
           <Route path="/RecallPage" element={< RecallPage />} />
           <Route path="/PurchasePage" element={< PurchasePage />} />
           <Route path="/InspectPage" element={< InspectPage />} />
-
-          <Route path="/HealthPage20" element={< HealthPage20 />} />
-          <Route path="/ContractPage" element={< ContractPage />} />
-          <Route path="/FeedbackPage" element={< FeedbackPage />} />
-          <Route path="/RecyclingPage" element={< RecyclingPage />} />
-          <Route path="/PurchasePage24" element={< PurchasePage24 />} />
-          <Route path="/AnalysisPage" element={< AnalysisPage />} />
 
          
 

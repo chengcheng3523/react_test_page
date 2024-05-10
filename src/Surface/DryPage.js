@@ -26,16 +26,15 @@ const DryPage = () => {
           
             <Loginlayout fixedHeader>       
             <ClearFix height="90px"/>      
-            <div>
-            <h1>
-                表12.其他資材使用紀錄
-            </h1>
-        </div>       
+            <div><h1>表12.其他資材使用紀錄</h1></div>       
+
+       
             {cards.map((card, index) => (
             <Card  
             
              title="其他資材使用紀錄" extra={<Button onClick={handleClick}>More</Button>}  style={{ width: '50%', margin: '0 auto' }}>{/* RWD */}
-            <Flex vertical gap={10}>
+            
+                <Flex vertical gap={10}>
                 <div>
                     <span>使用日期：</span>       
                     <Space direction="vertical" size={12}>
@@ -60,8 +59,7 @@ const DryPage = () => {
                                 { value: '袋裝', label: '袋裝' }, 
                                 { value: '罐裝', label: '罐裝' },
                                 { value: '其他', label: '其他' },
-                            ]}
-                        />
+                            ]}/>
                     </Space>
                 </div>
                 <Input placeholder="操作人員" variant="filled" />
@@ -79,6 +77,7 @@ const DryPage = () => {
                  <div style={{ display: 'flex' }}>
                      <Button size={size} style={{ width: '50%', margin: '20px auto' }}>To Save</Button>
                 </div>
+       
         <ClearFix height="500px"/>
         </Loginlayout>
         
