@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ClearFix from "../components/common/ClearFix";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import { useNavigate } from 'react-router-dom'; // 使用 useNavigate 替代 useHistory
-
+import Loginlayout from "../components/layout/Loginlayout";
 
 
 const CompanyPage  = () => {
@@ -23,7 +23,7 @@ const CompanyPage  = () => {
     };
     
     return (
-        <DefaultLayout fixedHeader>           
+        <Loginlayout fixedHeader>           
             <ClearFix height="100px"/>  
 
             <div>
@@ -36,7 +36,7 @@ const CompanyPage  = () => {
             </form>
             
             <ClearFix height="500px"/>
-        </DefaultLayout>
+        </Loginlayout>
     );
 };
 

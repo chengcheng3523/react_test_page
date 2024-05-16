@@ -4,9 +4,35 @@ import ClearFix from "../components/common/ClearFix";
 import {   Button,   Flex,   Upload,   Input,   Card,    Form,   InputNumber,   Radio,     Image,   Space ,  Divider} from 'antd';
 import { PlusOutlined, MinusCircleOutlined } from '@ant-design/icons';
 import styles from './InfoPage.module.css'; // 导入样式文件
-
+import axios from 'axios';
+import moment from 'moment';
 
 const InfoPage = () => {
+
+  const onFinish = async (values) => {
+    // Format the date before sending it to the server
+    values['Seedling Purchase Date'] = moment(values['Seedling Purchase Date']).format('YYYY-MM-DD');
+  
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/basicdata/post', values);
+      console.log('成功發送請求，回應:', response.data);
+    } catch (error) {
+      console.error('發送請求失敗:', error);
+    }
+  };
+
+  const on1Finish = async (values) => {
+    // Format the date before sending it to the server
+    values['Seedling Purchase Date'] = moment(values['Seedling Purchase Date']).format('YYYY-MM-DD');
+  
+    try {
+      const response = await axios.post('', values);
+      console.log('成功發送請求，回應:', response.data);
+    } catch (error) {
+      console.error('發送請求失敗:', error);
+    }
+  };
+
   const [componentSize, setComponentSize] = useState('default');
 
   const onFormLayoutChange = ({ size }) => {
@@ -21,10 +47,8 @@ const InfoPage = () => {
     return e && e.fileList;
   };
 
-  const onFinish = (values) => {
-    console.log('Received values of form:', values);
-  };
-
+  
+  
   return (
     <Loginlayout fixedHeader>
       <ClearFix height="100px" />
@@ -40,6 +64,7 @@ const InfoPage = () => {
           onValuesChange={onFormLayoutChange}
           size={componentSize}
           style={{ maxWidth: 600 }}
+          onFinish={onFinish}
         >
           <Form.Item label="Form Size" name="size">
             <Radio.Group>
@@ -49,38 +74,42 @@ const InfoPage = () => {
             </Radio.Group>
           </Form.Item>
 
-          <Form.Item label="單位名稱:">
+          <Form.Item label="單位代號:" name="UC">
+            <Input />
+          </Form.Item>
+          <Form.Item label="單位名稱:" name="UN">
             <Input />
           </Form.Item>
 
-          <Form.Item label="經營農戶姓名:">
+          <Form.Item label="經營農戶姓名:"name="FarmerName">
             <Input />
           </Form.Item>
 
-          <Form.Item label="電話:">
+          <Form.Item label="電話:"name="ContactPhone">
             <Input />
           </Form.Item>
 
-          <Form.Item label="行動電話:">
+          <Form.Item label="行動電話:"name="MobilePhone">
             <Input />
           </Form.Item>
           
-          <Form.Item label="傳真:">
+          <Form.Item label="傳真:"name="Fax">
             <Input />
           </Form.Item>
 
-          <Form.Item label="2吋照片上傳" valuePropName="fileList" getValueFromEvent={normFile}>
+          <Form.Item label="住址:"name="Address">
+            <Input />
+          </Form.Item>
+          {/* <Form.Item label="2吋照片上傳" name="UC" valuePropName="fileList" getValueFromEvent={normFile}>
             <Upload action="/upload.do" listType="picture-card">
               <button style={{ border: 0, background: 'none' }} type="button">
                 <PlusOutlined />
                 <div style={{ marginTop: 8 }}>上傳</div>
               </button>
             </Upload>
-          </Form.Item>
+          </Form.Item> */}
 
-          <Form.Item 
-            name="email" 
-            label="E-mail" 
+          <Form.Item  name="email" label="Email" 
             rules={[
               { type: 'email', message: '請輸入有效的 E-mail 地址！' },
               { required: true, message: '請輸入 E-mail 地址！' }
@@ -89,14 +118,52 @@ const InfoPage = () => {
             <Input />
           </Form.Item>
 
-          <Form.Item label="栽培總面積">
+
+
+          <Form.Item label="編號" name="NUMBER" >
+            <InputNumber />
+          </Form.Item>
+
+          <Form.Item label="農地地籍號碼" name="LandParcelNumber" >
+            <InputNumber />
+          </Form.Item>
+          
+          <Form.Item label="栽培總面積" name="TotalCultivationArea" >
             <InputNumber />單位:公頃
           </Form.Item>
-            
+
+          <Form.Item label="面積" name="Area" >
+            <InputNumber />
+          </Form.Item>
+
+          <Form.Item label="種植作物" name="Crop" >
+            <InputNumber />
+          </Form.Item>
+
+          <Form.Item label="場區代號" name="AreaCode" >
+            <InputNumber />
+          </Form.Item>
+
+          <Form.Item label="場區面積" name="AreaSize" >
+            <InputNumber />
+          </Form.Item>
+
+          <Form.Item label="種植作物種類、產期、預估產量(公斤)" name="CropType,HarvestPeriod,EstimatedYield" >
+            <InputNumber />
+          </Form.Item>
+
+          <Form.Item label="備註" name="Notes" >
+            <InputNumber />
+          </Form.Item>
+
+
+          <Form.Item>
+          <Button type="primary" htmlType="submit">儲存</Button>
+          </Form.Item>
         </Form>                         
       </Card>
 
-      <Card  title="農地地籍號碼"className={styles.card}> {/* 使用样式 */}
+      <Card  title="農地地籍號碼" name="Land Parcel Number" className={styles.card}> {/* 使用样式 */}
         <Form
          
           layout="horizontal" 
@@ -104,7 +171,7 @@ const InfoPage = () => {
           onValuesChange={onFormLayoutChange}
           size={componentSize}
           name="dynamic_form_nest_item"
-          onFinish={onFinish}
+          on1Finish={on1Finish}
           style={{ maxWidth: 600 }}
           autoComplete="off">
 
@@ -164,9 +231,7 @@ const InfoPage = () => {
 
           </Form.List>
           <Form.Item>
-            <Button type="primary" htmlType="submit">
-              提交
-            </Button>
+          <Button type="primary" htmlType="submit">儲存</Button>
           </Form.Item>
         
         </Form>

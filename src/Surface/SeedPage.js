@@ -3,11 +3,13 @@ import Loginlayout from "../components/layout/Loginlayout";
 import ClearFix from "../components/common/ClearFix";
 import { Button, Card, Form, Input, Select, DatePicker, Radio, Space } from 'antd';
 import axios from 'axios';
-
+import moment from 'moment';
 const SeedPage = () => {
 
-
   const onFinish = async (values) => {
+    // Format the date before sending it to the server
+    values['Seedling Purchase Date'] = moment(values['Seedling Purchase Date']).format('YYYY-MM-DD');
+  
     try {
       const response = await axios.post('http://localhost:5000/api/seed02/post', values);
       console.log('成功發送請求，回應:', response.data);
@@ -35,13 +37,28 @@ const SeedPage = () => {
     console.log('radio checked', e.target.value);
     setValue(e.target.value);
   };
-
+// 在適當的地方（例如 componentDidMount 或 useEffect 中）調用這個函數
+async function fetchData() {
+  try {
+    const response = await axios.get('http://127.0.0.1:5000/api/seed02/get');
+    console.log(response.data); // 這裡只是將數據輸出到控制台，您可能需要根據您的需求來處理數據
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
   return (
     <Loginlayout fixedHeader>
       <ClearFix height="100px" />
+
       <div>
         <h1>表2.種子(苗)登記表</h1>
       </div>
+      <Form.Item  title="資料查詢:">
+      
+          <Input label="作物代號:"size={size} style={{ width: '20%', margin: '20px auto' }}/>
+          <Button >查詢</Button>
+      </Form.Item>
+
 
       {cards.map((card, index) => (
         <Card
@@ -50,7 +67,6 @@ const SeedPage = () => {
           extra={<Button onClick={handleClick}>More</Button>}
         >
           <Form
-           
             labelCol={{ span: 10}}
             wrapperCol={{ span: 14 }}
             layout="horizontal"
@@ -60,6 +76,16 @@ const SeedPage = () => {
             style={{ maxWidth: 600 }}
             onFinish={onFinish}
           >
+            <Form.Item  label="單位代號:" name="UC">
+            <Input />
+            </Form.Item>
+            <Form.Item label="單位名稱:"  name="UN">
+            <Input />
+            </Form.Item>
+            <Form.Item label="作物 :"  name="Crop">
+            <Input />
+            </Form.Item>
+
             <Form.Item label="栽培作物:" name="Cultivated Crop">
               <Input />
             </Form.Item>
@@ -98,6 +124,9 @@ const SeedPage = () => {
           </Form>
         </Card>
       ))}
+
+
+
       <ClearFix height="500px" />
     </Loginlayout>
   );

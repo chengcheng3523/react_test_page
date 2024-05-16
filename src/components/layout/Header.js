@@ -21,15 +21,15 @@ const Header = () => {
   return (
     <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
       <Item key="home" icon={<AppstoreOutlined />}>
-        <Link to="/">Home</Link>
+        <Link to="/">首頁</Link>
       </Item>
 
       <Item key="CompanyPage" icon={<ProfileOutlined />} className="float-right">
-        <Link to="/CompanyPage">Company</Link>
+        <Link to="/CompanyPage">查詢資料</Link>
       </Item>
 
       <Item key="login" icon={<UserOutlined />} className="float-right">
-        <Link to="/InfoPage">Login</Link>
+        <Link to="/InfoPage">新增資料</Link>
       </Item>
 
       <SubMenu icon={<SettingOutlined />} title="Username">
