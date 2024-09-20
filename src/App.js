@@ -13,26 +13,26 @@ import MaterialsPage from './From/MaterialsPage';
 import ItemsList from './From/ItemsList';
 import Login from './From/Login'; //Login
 
-import InfoPage from './Surface/InfoPage'; // 表1-1
-import PlanPage from './Surface/PlanPage'; // 表1-2 未完成
-import SeedPage from './Surface/SeedPage'; // 表2
-import WorkPage from './Surface/WorkPage'; // 表3
-import SolutionPage from './Surface/SolutionPage'; // 表4
-import MapPage from './Surface/MapPage'; // 表5
-import FertPage from './Surface/FertPage'; // 表6
-import PesticidePage from './Surface/PesticidePage'; // 表7
-import OtherPage from './Surface/OtherPage'; // 表8
-import FacilityPage from './Surface/FacilityPage'; // 表9
-import EquipPage from './Surface/EquipPage'; // 表10
-import HarvestPage from './Surface/HarvestPage'; // 表11
-import DryPage from './Surface/DryPage'; // 表12
-import PackPage from './Surface/PackPage'; // 表13
-import HealthPage14 from './Surface/HealthPage14'; // 表14
-import TracePage from './Surface/TracePage'; // 表15
-import FeedPage from './Surface/FeedPage'; // 表16
-import RecallPage from './Surface/RecallPage'; // 表17
-import PurchasePage from './Surface/PurchasePage'; // 表18
-import InspectPage from './Surface/InspectPage'; // 表19
+import InfoPage from './PostPage/InfoPage'; // 表1-1
+import PlanPage from './PostPage/PlanPage'; // 表1-2 未完成
+import SeedPage from './PostPage/SeedPage'; // 表2
+import WorkPage from './PostPage/WorkPage'; // 表3
+import SolutionPage from './PostPage/SolutionPage'; // 表4
+import MapPage from './PostPage/MapPage'; // 表5
+import FertPage from './PostPage/FertPage'; // 表6
+import PesticidePage from './PostPage/PesticidePage'; // 表7
+import OtherPage from './PostPage/OtherPage'; // 表8
+import FacilityPage from './PostPage/FacilityPage'; // 表9
+import EquipPage from './PostPage/EquipPage'; // 表10
+import HarvestPage from './PostPage/HarvestPage'; // 表11
+import DryPage from './PostPage/DryPage'; // 表12
+import PackPage from './PostPage/PackPage'; // 表13
+import HealthPage14 from './PostPage/HealthPage14'; // 表14
+import TracePage from './PostPage/TracePage'; // 表15
+import FeedPage from './PostPage/FeedPage'; // 表16
+import RecallPage from './PostPage/RecallPage'; // 表17
+import PurchasePage from './PostPage/PurchasePage'; // 表18
+import InspectPage from './PostPage/InspectPage'; // 表19
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 

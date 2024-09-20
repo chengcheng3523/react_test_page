@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import Loginlayout from "../components/layout/Loginlayout";
 import ClearFix from "../components/common/ClearFix";
-import { Button, Card, Form, Input, Select, DatePicker, Radio, Space } from 'antd';
+import { Button, Card, Form, Input, Select, Radio, Space, Table } from 'antd';
 import axios from 'axios';
-import moment from 'moment';
 const SeedPage = () => {
 
   const onFinish = async (values) => {
     // Format the date before sending it to the server
-    values['Seedling Purchase Date'] = moment(values['Seedling Purchase Date']).format('YYYY-MM-DD');
-  
     try {
       const response = await axios.post('http://localhost:5000/api/seed02/post', values);
       console.log('成功發送請求，回應:', response.data);
@@ -38,7 +35,7 @@ const SeedPage = () => {
     setValue(e.target.value);
   };
 // 在適當的地方（例如 componentDidMount 或 useEffect 中）調用這個函數
-async function fetchData() {
+const fetchData = async () => {
   try {
     const response = await axios.get('http://127.0.0.1:5000/api/seed02/get');
     console.log(response.data); // 這裡只是將數據輸出到控制台，您可能需要根據您的需求來處理數據
@@ -94,21 +91,18 @@ async function fetchData() {
             <Form.Item label="種子(苗)來源:" name="SeedSource">
               <Radio.Group onChange={handleChange} value={value}>
                 <Space direction="vertical">
-                  <Radio value={1}>自行育苗</Radio>
-                  <Radio value={2}>
-                    購買來源
-                    {value === 2 ? (
+                  <Radio value={"自行育苗"}>自行育苗</Radio>
+                  <Radio value={"購買來源"}>購買來源
+                    {value === "購買來源" ? (
                       <Input placeholder="請填寫其他購買來源:" style={{ width: 200, marginLeft: 10 }} />
                     ) : null}
                   </Radio>
                 </Space>
               </Radio.Group>
             </Form.Item>
-
             <Form.Item label="育苗(購入)日期:" name="SeedlingPurchaseDate">
-              <DatePicker />
+              < Input />
             </Form.Item>
-
             <Form.Item label="育苗(購入)種類:" name="SeedlingPurchaseType">
               <Select>
                 <Select.Option value="種子">種子</Select.Option>
@@ -121,8 +115,6 @@ async function fetchData() {
           </Form>
         </Card>
       ))}
-
-
 
       <ClearFix height="500px" />
     </Loginlayout>
