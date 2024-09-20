@@ -76,9 +76,6 @@ async function fetchData() {
             style={{ maxWidth: 600 }}
             onFinish={onFinish}
           >
-            <Form.Item  label="單位代號:" name="UC">
-            <Input />
-            </Form.Item>
             <Form.Item label="單位名稱:"  name="UN">
             <Input />
             </Form.Item>
@@ -86,15 +83,15 @@ async function fetchData() {
             <Input />
             </Form.Item>
 
-            <Form.Item label="栽培作物:" name="Cultivated Crop">
+            <Form.Item label="栽培作物:" name="CultivatedCrop">
               <Input />
             </Form.Item>
 
-            <Form.Item label="栽培品種:" name="Crop Variety">
+            <Form.Item label="栽培品種:" name="CropVariety">
               <Input />
             </Form.Item>
 
-            <Form.Item label="種子(苗)來源:" name="Seed Source">
+            <Form.Item label="種子(苗)來源:" name="SeedSource">
               <Radio.Group onChange={handleChange} value={value}>
                 <Space direction="vertical">
                   <Radio value={1}>自行育苗</Radio>
@@ -108,11 +105,11 @@ async function fetchData() {
               </Radio.Group>
             </Form.Item>
 
-            <Form.Item label="育苗(購入)日期:" name="Seedling Purchase Date">
+            <Form.Item label="育苗(購入)日期:" name="SeedlingPurchaseDate">
               <DatePicker />
             </Form.Item>
 
-            <Form.Item label="育苗(購入)種類:" name="Seedling Purchase Type">
+            <Form.Item label="育苗(購入)種類:" name="SeedlingPurchaseType">
               <Select>
                 <Select.Option value="種子">種子</Select.Option>
                 <Select.Option value="種苗">種苗</Select.Option>

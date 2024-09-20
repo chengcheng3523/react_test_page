@@ -5,10 +5,10 @@ import { Button, Card, Form, Input, Select, DatePicker, Radio, Space ,InputNumbe
 
 const WorkPage = () => {
 
-    const onFinish = (values) => {
-        console.log('Received values of form:', values);
-        // 在這裡處理表單提交後的操作，比如儲存數據等
-      };
+  const onFinish = (values) => {
+      console.log('Received values of form:', values);
+      // 在這裡處理表單提交後的操作，比如儲存數據等
+  };
       
   const [componentSize, setComponentSize] = useState('default');
   const onFormLayoutChange = ({ size }) => {
