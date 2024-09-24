@@ -3,11 +3,11 @@ import Loginlayout from "../components/layout/Loginlayout";
 import ClearFix from "../components/common/ClearFix";
 import { Button,  Form, Input, Select, Radio, Space, } from 'antd';
 import axios from 'axios';
-const SeedPage = () => {
+const Page018 = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/seed02/post', values);
+      const response = await axios.post('http://localhost:5000/api/dor18/post', values);
       console.log('成功發送請求，回應:', response.data);
       form.resetFields(); // 清空輸入框
     } catch (error) {
@@ -25,7 +25,7 @@ const SeedPage = () => {
       <ClearFix height="100px" />
 
       <div>
-        <h1>表2.種子(苗)登記表</h1>
+        <h1>表18.乾燥作業紀錄</h1>
       </div>
           <Form
             form={form} // 綁定表單實例
@@ -34,40 +34,43 @@ const SeedPage = () => {
             style={{ maxWidth: 600 }}
             onFinish={onFinish} // 添加此行post
           >
-            <Form.Item label="單位名稱:"  name="UN">
+            <Form.Item label="處理場所:"  name="">
             <Input />
             </Form.Item>
-            <Form.Item label="作物 :"  name="Crop">
+            <Form.Item label="處理日期 :"  name="ProcessDate">
             <Input />
             </Form.Item>
-            <Form.Item label="栽培作物:" name="CultivatedCrop">
+            <Form.Item label="品項:" name="Item">
               <Input />
             </Form.Item>
-            <Form.Item label="栽培品種:" name="CropVariety">
+            <Form.Item label="批次編號:" name="BatchNumber">
               <Input />
             </Form.Item>
-            <Form.Item label="種子(苗)來源:" name="SeedSource">
+            <Form.Item label="鮮重(公斤):" name="FreshWeight">
+              <Input  />
+            </Form.Item>
+            <Form.Item label="作業內容:" name="Operation">
               <Radio.Group value={value} onChange={onChange}>
                 <Space direction="vertical">
-                  <Radio value={"自行育苗"}>自行育苗</Radio>
-                  <Radio value={"購買來源"}>購買來源
-                    {value === "購買來源" ? (
-                      <Input placeholder="請填寫其他購買來源:" style={{ width: 200, marginLeft: 10 }} />
+                  <Radio value={"金針浸泡"}>金針浸泡</Radio>
+                  <Radio value={"金針漂水"}>金針漂水</Radio>
+                  <Radio value={"日曬"}>日曬</Radio>
+                  <Radio value={"乾燥"}>乾燥</Radio>
+                  <Radio value={"作業內容"}>作業內容
+                    {value === "作業內容" ? (
+                      <Input placeholder="作業內容:" style={{ width: 200, marginLeft: 10 }} />
                     ) : null}
                   </Radio>
                 </Space>
               </Radio.Group>
             </Form.Item>
-            <Form.Item label="育苗(購入)日期:" name="SeedlingPurchaseDate">
+            <Form.Item label="乾重 (公斤):" name="DryWeight">
               < Input />
             </Form.Item>
-            <Form.Item label="育苗(購入)種類:" name="SeedlingPurchaseType">
-              <Select>
-                <Select.Option value="種子">種子</Select.Option>
-                <Select.Option value="種苗">種苗</Select.Option>
-                <Select.Option value="繁殖體">繁殖體</Select.Option>
-              </Select>
-            </Form.Item > 
+            <Form.Item label="備註:" name="Remarks">
+              < Input />
+            </Form.Item>
+
             <Button type="primary" htmlType="submit">儲存</Button>
           </Form>
       <ClearFix height="500px" />
@@ -75,4 +78,4 @@ const SeedPage = () => {
   );
 };
 
-export default SeedPage;
+export default Page018;

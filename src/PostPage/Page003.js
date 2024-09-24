@@ -1,93 +1,67 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Loginlayout from "../components/layout/Loginlayout";
 import ClearFix from "../components/common/ClearFix";
-import { Button, Card, Form, Input, Select, DatePicker, Radio, Space ,InputNumber} from 'antd';
+import { Button,  Form, Input, Select, Radio, Space, } from 'antd';
+import axios from 'axios';
+const Page003 = () => {
 
-const WorkPage = () => {
-
-  const onFinish = (values) => {
-      console.log('Received values of form:', values);
-      // 在這裡處理表單提交後的操作，比如儲存數據等
+  const onFinish = async (values) => {
+    try {
+      const response = await axios.post('http://localhost:5000/api/records03/post', values);
+      console.log('成功發送請求，回應:', response.data);
+      form.resetFields(); // 清空輸入框
+    } catch (error) {
+      console.error('發送請求失敗:', error);
+    }
   };
-      
-  const [componentSize, setComponentSize] = useState('default');
-  const onFormLayoutChange = ({ size }) => {
-    setComponentSize(size);
-  };
-
-  const [size] = useState('large'); // default is 'middle'
-
-  const [cards, setCards] = useState([{}]); // 初始状态为一个空的卡片
-
-  function handleClick() {
-    const newCard = {}; // 创建一个新的空卡片
-    setCards([...cards, newCard]); // 将新卡片添加到卡片数组中
-  }
-
-  const [value, setValue] = useState("1");
-  const handleChange = (e) => {
-    console.log('radio checked', e.target.value);
+  const [form] = Form.useForm(); // 使用 Form.useForm 鉤子
+  const [value, setValue] = useState(''); // 定義 value 狀態
+  const onChange = (e) => {
     setValue(e.target.value);
   };
-  const { TextArea } = Input;
+
   return (
     <Loginlayout fixedHeader>
       <ClearFix height="100px" />
+
       <div>
         <h1>表3.栽培工作紀錄</h1>
       </div>
-
-      {cards.map((card, index) => (
-        <Card
-          key={index}
-          title="栽培工作紀錄"
-          extra={<Button onClick={handleClick}>More</Button>}
-        >
           <Form
-           
-            labelCol={{ span: 10 }}
-            wrapperCol={{ span: 14 }}
-            layout="horizontal"
-            initialValues={{ size: componentSize }}
-            onValuesChange={onFormLayoutChange}
-            size={componentSize}
+            form={form} // 綁定表單實例
+            labelCol={{ span: 10}}
+            wrapperCol={{ span: 14 }}   
             style={{ maxWidth: 600 }}
-            onFinish={onFinish}
+            onFinish={onFinish} // 添加此行post
           >
-           <Form.Item label="作業日期:" name="Seedling Purchase Date">
-              <DatePicker />
+             <Form.Item label="作業日期:"  name="OperationDate">
+            <Input />
             </Form.Item>
-
-          <Form.Item label="田區代號:" name="Cultivated Crop">
+            <Form.Item label="田區代號 :"  name="FieldCode">
+            <Input />
+            </Form.Item>
+            <Form.Item label="作物:" name="Crop">
               <Input />
             </Form.Item>
-
-            <Form.Item label="作物:" name="Crop Variety">
-              <Input />
-            </Form.Item>
-
-           
-
-            <Form.Item label="作業內容(可填寫代碼)" name="Seedling Purchase Type">
+            <Form.Item label="作業內容(可填寫代碼):" name="CropContent">
               <Select>
-                <Select.Option value="(1-1)整地">(1-1) 整地</Select.Option>
-                <Select.Option value="(1-2)作畦">(1-2) 作畦</Select.Option>
-                <Select.Option value="(1-3)配置灌溉/澆水管線">(1-3) 配置灌溉/澆水管線</Select.Option>
+                <Select.Option value="(1-1) 整地">(1-1) 整地</Select.Option>
+                <Select.Option value="(1-2) 作畦">(1-2) 作畦</Select.Option>
+                <Select.Option value="(1-3) 配置灌溉/澆水管線">(1-3) 配置灌溉/澆水管線</Select.Option>
                 <Select.Option value="(1-4) 土壤改良">(1-4) 土壤改良</Select.Option>
                 <Select.Option value="(1-5) 土壤消毒">(1-5) 土壤消毒</Select.Option>
                 <Select.Option value="(1-6) 設施操作">(1-6) 設施操作</Select.Option>
-                <Select.Option value="(1-7) 開溝">(1-7) 開溝</Select.Option>
                 <Select.Option value="(1-8) 遮蔭網">(1-8) 遮蔭網</Select.Option>
                 <Select.Option value="(2-1) 介質消毒">(2-1) 介質消毒</Select.Option>
                 <Select.Option value="(2-2) 裝袋作業">(2-2) 裝袋作業</Select.Option>
                 <Select.Option value="(2-3) 上架">(2-3) 上架</Select.Option>
                 <Select.Option value="(2-4) 介質調配">(2-4) 介質調配</Select.Option>
-                <Select.Option value="(2-5) 養液配置">(2-5) 養液配置</Select.Option>
+                <Select.Option value="(2-5) 養液配置">(2-5) 養液配置</Select.Option>  
                 <Select.Option value="(3-1) 播種">(3-1) 播種</Select.Option>
                 <Select.Option value="(3-2) 育苗">(3-2) 育苗</Select.Option>
                 <Select.Option value="(3-3) 定植(移植)">(3-3) 定植(移植)</Select.Option>
                 <Select.Option value="(3-4) 播種前種子處理">(3-4) 播種前種子處理</Select.Option>
-                <Select.Option value=" (4-1) 中耕">(4-1) 中耕</Select.Option>
+                <Select.Option value="(4-1) 中耕">(4-1) 中耕</Select.Option>
                 <Select.Option value="(4-2) 灌溉/澆水">(4-2) 灌溉/澆水</Select.Option>
                 <Select.Option value="(4-3) 培土">(4-3) 培土</Select.Option>
                 <Select.Option value="(4-4) 摘葉">(4-4) 摘葉</Select.Option>
@@ -109,27 +83,18 @@ const WorkPage = () => {
                 <Select.Option value="(6-8) 機械中耕">(6-8) 機械中耕</Select.Option>
                 <Select.Option value="(7-1) 採收">(7-1) 採收</Select.Option>
                 <Select.Option value="(7-2) 產季結束">(7-2) 產季結束</Select.Option>
-
-
-             </Select>
+                <Select.Option value="8. 其他">8. 其他</Select.Option>
+              </Select>
+            </Form.Item > 
+            <Form.Item label="備註作業內容：(選填)" name="WorkItemCode">
+             <Input.TextArea />
             </Form.Item>
-            <Form.Item  label="其他">
-                <TextArea                  
-                    onChange={(e) => setValue(e.target.value)}
-                    placeholder=" 8. 其他:若非上述內容，請填寫其他並註明工作內容。"
-                    autoSize={{minRows: 3,maxRows: 5,}}                    />
-               </Form.Item>
-
-
-
 
             <Button type="primary" htmlType="submit">儲存</Button>
           </Form>
-        </Card>
-      ))}
       <ClearFix height="500px" />
     </Loginlayout>
   );
 };
 
-export default WorkPage;
+export default Page003;
