@@ -19,26 +19,28 @@ const Header = () => {
   };
 
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+    <Menu onClick={handleClick}  mode="horizontal">
       <Item key="home" icon={<AppstoreOutlined />}>
         <Link to="/">首頁</Link>
       </Item>
 
-      <Item key="CompanyPage" icon={<ProfileOutlined />} className="float-right">
-        <Link to="/CompanyPage">查詢資料</Link>
+      <Item key="PostPage" icon={<ProfileOutlined />} className="float-right">
+        <Link to="/PostPage">新增資料</Link>
       </Item>
-
+      <Item key="GetPage" icon={<ProfileOutlined />} className="float-right">
+        <Link to="/GetPage">查詢資料</Link>
+      </Item>
+      <Item key="PutPage" icon={<ProfileOutlined />} className="float-right">
+        <Link to="/PutPage">修改資料</Link>
+      </Item>
+      <Item key="DeletePage" icon={<ProfileOutlined />} className="float-right">
+        <Link to="/DeletePage">刪除資料</Link>
+      </Item>
       <Item key="login" icon={<UserOutlined />} className="float-right">
-        <Link to="/InfoPage">新增資料</Link>
+        <Link to="/login">登入</Link>
       </Item>
-
-      <SubMenu icon={<SettingOutlined />} title="Username">
-        <Item key="setting:1">Option 1</Item>
-        <Item key="setting:2">Option 2</Item>
-      </SubMenu>
-      
     </Menu>
+
   );
 };
-
 export default Header;

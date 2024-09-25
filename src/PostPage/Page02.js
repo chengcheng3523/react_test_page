@@ -27,7 +27,7 @@ const Page02 = () => {
       <div>
         <h1>表1-2.生產計畫</h1>
      
-      <Input style={{width: '70px'}} label="年度生產計畫 :" name=""/>年度生產計畫 :
+     
       </div>
           <Form
             form={form} // 綁定表單實例
@@ -36,6 +36,9 @@ const Page02 = () => {
             style={{ maxWidth: 600 }}
             onFinish={onFinish} // 添加此行post
           >
+            <Form.Item label="年度生產計畫:"  name="">
+             <Input style={{width: '100px'}}  />
+            </Form.Item>
             <Form.Item label="場區代號:"  name="AreaCode">
             <Input />
             </Form.Item>

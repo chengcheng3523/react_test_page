@@ -2,15 +2,11 @@ import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';//Home
-import CartPage from './pages/CartPage';
-import CheckoutPage from './pages/CheckoutPage';
-import ProductCollectionPage from './pages/ProductCollectionPage';
-import ProductPage from './pages/ProductPage'; //首頁
 
-import CompanyPage from './From/CompanyPage'; //Company
-import Address from './From/Address';
-import MaterialsPage from './From/MaterialsPage';
-import ItemsList from './From/ItemsList';
+import PutPage from './From/PutPage'; //Company
+import PostPage from './From/PostPage'; //Post
+import DeletePage from './From/DeletePage';//Delete
+import GetPage from './From/GetPage'; //Get
 import Login from './From/Login'; //Login
 
 import Page01 from './PostPage/Page01'; // 表1-1
@@ -36,28 +32,19 @@ import Page019 from './PostPage/Page019'; // 表19
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
-
-
-
-
 const App = () => {
   return (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/mall" />} />
           <Route path="/mall" element={<HomePage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/mall/:categoryName" element={<ProductCollectionPage />} />
-          
-          <Route path="/:ProductName" element={<ProductPage />} />
-          <Route path="/CompanyPage" element={<CompanyPage />} />
-          <Route path="/Address" element={< Address />} />
-          <Route path="/MaterialsPage" element={< MaterialsPage />} />
-          <Route path="/Login" element={< Login />} />
-          <Route path="/ItemsList" element={< ItemsList />} />
 
-          
+          <Route path="/GetPage" element={< GetPage />} /> //  未完成
+          <Route path="/PostPage" element={< PostPage />} />  // 未完成
+          <Route path="/PutPage" element={< PutPage />} />// 未完成
+          <Route path="/DeletePage" element={< DeletePage />} />// 未完成
+          <Route path="/Login" element={< Login />} />
+
           <Route path="/Page01" element={< Page01 />} />  
           <Route path="/Page02" element={< Page02 />} />
           <Route path="/Page002" element={< Page002 />} />
@@ -79,9 +66,7 @@ const App = () => {
           <Route path="/Page018" element={< Page018 />} />
           <Route path="/Page019" element={< Page019 />} />
 
-         
 
-          
         </Routes>
       </BrowserRouter>
   );
