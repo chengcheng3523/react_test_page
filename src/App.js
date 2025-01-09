@@ -3,32 +3,32 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';//Home
 
-import PutPage from './From/PutPage'; //Company
-import PostPage from './From/PostPage'; //Post
-import DeletePage from './From/DeletePage';//Delete
-import GetPage from './From/GetPage'; //Get
-import Login from './From/Login'; //Login
+import PutPage from './From-button/Put-button'; //Company
+import PostPage from './From-button/Post-button'; //Post
+import DeletePage from './From-button/Delete-button';//Delete
+import GetPage from './From-button/Get-button'; //Get
+import Login from './From-button/Login'; //Login
 
-import Page01 from './PostPage/Page01'; // 表1-1
-import Page02 from './PostPage/Page02'; // 表1-2 未完成
-import Page002 from './PostPage/Page002'; // 表2
-import Page003 from './PostPage/Page003'; // 表3
-import Page004 from './PostPage/Page004'; // 表4
-import Page005 from './PostPage/Page005'; // 表5
-import Page006 from './PostPage/Page006'; // 表6
-import Page007 from './PostPage/Page007'; // 表7
-import Page008 from './PostPage/Page008'; // 表8
-import Page009 from './PostPage/Page009'; // 表9
-import Page010 from './PostPage/Page010'; // 表10
-import Page011 from './PostPage/Page011'; // 表11
-import Page012 from './PostPage/Page012'; // 表12
-import Page013 from './PostPage/Page013'; // 表13
-import Page014 from './PostPage/Page014'; // 表14
-import Page015 from './PostPage/Page015'; // 表15
-import Page016 from './PostPage/Page016'; // 表16
-import Page017 from './PostPage/Page017'; // 表17
-import Page018 from './PostPage/Page018'; // 表18
-import Page019 from './PostPage/Page019'; // 表19
+import Page01 from './Form-Page/Page01'; // 表1-1
+import Page02 from './Form-Page/Page02'; // 表1-2 未完成
+import Page002 from './Form-Page/Page002'; // 表2
+import Page003 from './Form-Page/Page003'; // 表3
+import Page004 from './Form-Page/Page004'; // 表4
+import Page005 from './Form-Page/Page005'; // 表5
+import Page006 from './Form-Page/Page006'; // 表6
+import Page007 from './Form-Page/Page007'; // 表7
+import Page008 from './Form-Page/Page008'; // 表8
+import Page009 from './Form-Page/Page009'; // 表9
+import Page010 from './Form-Page/Page010'; // 表10
+import Page011 from './Form-Page/Page011'; // 表11
+import Page012 from './Form-Page/Page012'; // 表12
+import Page013 from './Form-Page/Page013'; // 表13
+import Page014 from './Form-Page/Page014'; // 表14
+import Page015 from './Form-Page/Page015'; // 表15
+import Page016 from './Form-Page/Page016'; // 表16
+import Page017 from './Form-Page/Page017'; // 表17
+import Page018 from './Form-Page/Page018'; // 表18
+import Page019 from './Form-Page/Page019'; // 表19
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 

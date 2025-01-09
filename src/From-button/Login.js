@@ -4,28 +4,21 @@ import ClearFix from "../components/common/ClearFix";
 import DefaultLayout from "../components/layout/DefaultLayout";
 
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [usernameIsFocused, setUsernameIsFocused] = useState(false); // 為 username 創建聚焦狀態
-    const [passwordIsFocused, setPasswordIsFocused] = useState(false); // 為 password 創建聚焦狀態
-    const [isFocused] = useState(false);
-
-    const navigate = useNavigate(); // 定義 navigate
-    const handleUsernameChange = (event) => {
-        setUsername(event.target.value);
+    const navigate = useNavigate();
+    const { login, isAuthenticated } = useContext(AuthContext);
+    const [username, setUsername]= useState("")
+    const [password, setPassword]= useState("")
+    const handleLogin = () => {
+      // call login api
+      console.log('handle login');
+      login(username, password).then(() => {navigate("/")});
     };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // 在此處處理登入邏輯
-        console.log(`Username: ${username}, Password: ${password}`);
-        // 登入成功後跳轉到首頁
-        navigate('/InfoPage');
-    };
+  // useEffect判斷登入狀況，自動跳轉
+    useEffect(() =>{
+      if(isAuthenticated ){ // 確保只有在沒有錯誤時才跳轉
+        navigate("/");
+      }
+    },[isAuthenticated, navigate]);
 
     const styles = {
         body: {
@@ -96,6 +89,7 @@ const Login = () => {
                     style={{ ...styles.input, ...styles.usernameInput }}
                     onFocus={() => setUsernameIsFocused(true)}
                     onBlur={() => setUsernameIsFocused(false)}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <input
                     type="password"
@@ -105,11 +99,14 @@ const Login = () => {
                     style={{ ...styles.input, ...styles.passwordInput }}
                     onFocus={() => setPasswordIsFocused(true)}
                     onBlur={() => setPasswordIsFocused(false)}
+                    onChange={(e) => setPassword(e.target.value)}  // 設置
                 />
+                
                 <input
                     type="submit"
                     value="Submit 提交"
                     style={{ ...styles.input, ...styles.submitInput }}
+                    onClick={handleLogin}
                 />
             </form>
         </div>

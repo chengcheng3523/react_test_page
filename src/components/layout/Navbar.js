@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 //menu
 //Sider
 
-
 const { Content, Sider } = Layout;
 const items = [FileOutlined].map(
   (icon, index) => ({
@@ -16,11 +15,8 @@ const items = [FileOutlined].map(
   }),
 );
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-
 
   return (
 
@@ -28,7 +24,6 @@ const Navbar = () => {
       theme="dark"
       mode="inline"
       defaultSelectedKeys={['1']}>
-
 
       <Menu.Item key="1" icon={<FileOutlined />}>
         <Link to="/Page01">表1-1.基本資料</Link>
@@ -90,7 +85,6 @@ const Navbar = () => {
       <Menu.Item key="20" icon={<FileOutlined />}>
         <Link to="/Page019">表19.包裝及出貨紀錄</Link>
       </Menu.Item>
-
 
     </Menu>
 

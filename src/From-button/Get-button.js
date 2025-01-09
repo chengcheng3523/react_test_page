@@ -10,6 +10,7 @@ const GetPage = () => {
             <div>
                 <h1>GetPage (查詢資料)</h1>
             </div>
+            
         </Loginlayout>
     );
 };
