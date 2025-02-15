@@ -1,6 +1,8 @@
 * npm install
 * npm start
 
+
+
 # Docker CMD
 * 開啟 docker desktop
 * 檢查容器 (運行中)docker ps
@@ -75,3 +77,25 @@ git push new-origin develop
 
 # 執行套件
 pip install flask-marshmallow
+
+
+
+
+npm install react-router-dom antd axios moment styled-components @ant-design/icons bootstrap web-vitals
+
+react-router-dom（用於路由）
+antd（Ant Design UI 組件庫）
+axios（HTTP 請求工具）
+moment（日期處理函式庫）
+styled-components（CSS-in-JS 解決方案）
+@ant-design/icons（Ant Design 的圖示庫）
+bootstrap（Bootstrap CSS 框架）
+web-vitals（網站效能測試工具）
+ 
+npm install (確保 node_modules 存在)
+清理快取（可選）如果還是有問題，可以清理 npm 快取：
+npm cache clean --force 
+然後刪除並重新安裝 node_modules：
+rm -rf node_modules package-lock.json
+npm install
+npm start
